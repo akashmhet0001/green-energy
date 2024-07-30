@@ -1,0 +1,311 @@
+/* Analogous color scheme */
+/* 
+#F0F8FF - AliceBlue
+#B0E0E6 - PowderBlue
+#4682B4 - SteelBlue
+#5F9EA0 - CadetBlue
+#6495ED - CornflowerBlue
+#ADD8E6 - LightBlue
+#333333 - Text Color
+*/
+
+/* Font pairing  
+Serif - Merriweather
+San serif - Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+/* General Styles */
+html,
+body,
+button {
+    height: 100%;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5;
+    /* Ratio between 1.4 and 1.6 */
+}
+
+h1,
+h2 {
+    font-family: "Merriweather", serif;
+}
+
+body {
+
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F8FF;
+    /* AliceBlue background */
+}
+
+/* navbar styling */
+#navbar {
+    background: #4682B4;
+    /* SteelBlue background */
+    color: #ffffff;
+    padding: 1rem;
+    border-bottom: 2px solid #5F9EA0;
+    /* CadetBlue line */
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+#navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    /* Mobile View */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    color: #5F9EA0;
+    border-radius: 4px;
+}
+
+/* masthead styling */
+#masthead {
+    background-image: url('../img/mastbg.jpg');
+    /* Update with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+}
+
+#masthead h1 {
+    color: #ffffff;
+}
+
+#masthead p {
+    font-size: 20px;
+}
+
+
+#main-content {
+    flex: 1;
+    padding: 2rem;
+    /* 2rem gutter */
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    background-color: #B0E0E6;
+    color: #333333;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+#main-content img {
+    border-radius: 8px;
+}
+
+
+/* button styling */
+.button-container {
+    margin: 1rem 0 1rem 0;
+    /* Top and bottom margins */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    /* Space between buttons */
+    padding: 1rem;
+}
+
+.button-container button {
+    background-color: transparent;
+    border: none;
+    color: #4682B4;
+    /* SteelBlue text */
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    position: relative;
+    /* Position relative for pseudo-element positioning */
+}
+
+.button-container button:hover {
+    background-color: rgb(176, 224, 230);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+    border-radius: 12px;
+}
+
+
+
+.button-container button::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    /* Position the line below the button */
+    left: 0;
+    width: 100%;
+    height: 4px;
+    /* Thickness of the underline */
+    background-color: #ffffff;
+    /* Default line color */
+}
+
+.button-container button.active::after {
+    background-color: #4682B4;
+    /* SteelBlue color for the active button */
+}
+
+#content-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* footer styling */
+footer {
+    background-color: #4682B4;
+    /* SteelBlue background */
+    color: #fff;
+    padding: 20px 0;
+    border-top: 2px solid #5F9EA0;
+    /* CadetBlue line */
+}
+
+.footercontainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footercontainer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footercontainer .row div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footercontainer h1 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    /* Desktop View */
+    border-bottom: 2px solid #ADD8E6;
+    /* LightBlue line */
+    padding-bottom: 5px;
+}
+
+.footercontainer ul {
+    list-style: none;
+}
+
+.footercontainer li {
+    margin-bottom: 10px;
+}
+
+.footercontainer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footercontainer a:hover {
+    color: #B0E0E6;
+    /* PowderBlue text */
+    text-decoration: underline;
+}
+
+.ges {
+    text-align: right;
+    margin: 0.25rem;
+    font-size: 0.75rem;
+    /* Mobile View */
+    color: #B0E0E6;
+    /* PowderBlue text */
+}
+
+@media (min-width: 30rem) and (max-width: 60rem) {
+
+    /* Tablet/Desktop View */
+    #navbar ul {
+        flex-direction: row;
+        /* Horizontal layout for larger screens */
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #navbar ul li a {
+        font-size: 1rem;
+        /* Desktop View */
+    }
+
+    #masthead h1 {
+        color: #ffffff;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .button-container button {
+        font-size: 1rem;
+        /* Desktop View */
+    }
+
+    #content-container img {
+        float: left;
+        width: 25%;
+        margin-right: 1rem;
+    }
+
+    .ges {
+        font-size: 1rem;
+        /* Desktop View */
+    }
+}
+
+@media (min-width: 60rem) {
+
+    /* Desktop View for screen res more than 60 rem */
+    #navbar ul {
+        flex-direction: row;
+        /* Horizontal layout for larger screens */
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #navbar ul li a {
+        font-size: 1rem;
+        /* Desktop View */
+    }
+
+
+    #masthead h1 {
+        color: #ffffff;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .button-container button {
+        font-size: 1rem;
+        /* Desktop View */
+    }
+
+    #content-container img {
+        float: left;
+        width: 25%;
+        margin-right: 1rem;
+    }
+
+    .ges {
+        font-size: 1rem;
+        /* Desktop View */
+    }
+}
